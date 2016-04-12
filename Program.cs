@@ -10,6 +10,12 @@ namespace ReviewProblems
     {
         static void Main(string[] args)
         {
+            CustomIteratorProblem testCustomIterator = new CustomIteratorProblem();            
+            foreach (string flightData in testCustomIterator)
+            {
+                Console.Write(flightData);
+            }
+            Console.ReadKey();
         }
     }
 }
