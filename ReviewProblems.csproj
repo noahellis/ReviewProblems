@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomIteratorProblem.cs" />
+    <Compile Include="EnumProblem.cs" />
     <Compile Include="Flights.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
