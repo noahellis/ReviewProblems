@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class Bird
+    class Bird : Animal
     {
         public string name;
         public int age;
-        public BirdBreed birdBreed;
-        public Bird(string Name, int Age, RabbitBreed birdBreed)
+        public BirdBreed BirdBreed;
+        public Bird(string Name, int Age, BirdBreed birdBreed) : base(Name, Age)
         {
-
+            name = Name;
+            age = Age;
+            birdBreed = BirdBreed;
         }
     }
 }

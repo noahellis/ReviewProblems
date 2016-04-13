@@ -34,23 +34,11 @@ namespace ReviewProblems
     {
         public string name;
         public int age;
-        public Animal(string Name, int Age, Dog dog)
+        public Animal(string Name, int Age)
         {
-            
+            name = Name;
+            age = Age;
         }
-        public Animal(string Name, int Age, Cat cat)
-        {
-
-        }
-        public Animal (string Name, int Age, Rabbit rabbit)
-        {
-
-        }
-        public Animal (string Name, int Age, Bird bird)
-        {
-
-        }
-
         public void AddAnimals()
         {
 

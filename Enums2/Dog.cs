@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class Dog
+    class Dog : Animal
     {
         public string name;
         public int age;
-        public DogBreed dogBreed;
-        public Dog(string Name, int Age, DogBreed dogBreed)
+        public DogBreed DogBreed;
+        public Dog(string Name, int Age, DogBreed dogBreed) :base (Name, Age)
         {
-
+            name = Name;
+            age = Age;
+            dogBreed = DogBreed;
         }
     }
 }

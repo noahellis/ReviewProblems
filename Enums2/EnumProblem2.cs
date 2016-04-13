@@ -28,18 +28,18 @@ namespace ReviewProblems
 
         public void AddAnimalList()
         {
-            AnimalList.Add(new Animal("fido", 4, Dog.doberman));
-            AnimalList.Add(new Animal("polly", 3, Bird.dove));
-            AnimalList.Add(new Animal("bugs", 60, Rabbit.volcano));
-            AnimalList.Add(new Animal("sylvester", 60, Cat.tabby));
-            AnimalList.Add(new Animal("tweety", 60, Bird.birdOfParadise));
+            AnimalList.Add(new Dog("fido", 4, DogBreed.doberman));
+            AnimalList.Add(new Bird("polly", 3, BirdBreed.dove));
+            AnimalList.Add(new Rabbit("bugs", 60, RabbitBreed.volcano));
+            AnimalList.Add(new Cat("sylvester", 60, CatBreed.tabby));
+            AnimalList.Add(new Bird("tweety", 60, BirdBreed.birdOfParadise));
 
         }
         public void PrintAnimals()
         {
             foreach(Animal animal in AnimalList)
             {
-                Console.WriteLine("Name: {0}, Age: {1}, Type of Animal: {2}", animal.name, animal.age, Dog.labradoodle.ToString());
+                Console.WriteLine(animal.name, animal.age, ) 
             }
         }
         

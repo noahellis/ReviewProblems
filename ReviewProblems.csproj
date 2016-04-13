@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
+    <Compile Include="Enums2\Animal.cs" />
     <Compile Include="Enums2\Bird.cs" />
     <Compile Include="Enums2\Cat.cs" />
     <Compile Include="CustomIterator\CustomIteratorProblem.cs" />
