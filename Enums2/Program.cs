@@ -17,9 +17,13 @@ namespace ReviewProblems
             //{
             //    Console.Write(flightData);
             //}
-            EnumProblem enumPromblem = new EnumProblem();
-            enumPromblem.PrintWeather();
+
+            //EnumProblem enumPromblem = new EnumProblem();
+            //enumPromblem.PrintWeather();
+            EnumProblem2 enumtest2 = new EnumProblem2();
+            enumtest2.PrintAnimals();
             Console.ReadKey();
+
         }
     }
 }

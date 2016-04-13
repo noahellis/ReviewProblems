@@ -43,12 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomIteratorProblem.cs" />
-    <Compile Include="EnumProblem.cs" />
-    <Compile Include="Flights.cs" />
-    <Compile Include="Person.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Animal.cs" />
+    <Compile Include="Enums2\Bird.cs" />
+    <Compile Include="Enums2\Cat.cs" />
+    <Compile Include="CustomIterator\CustomIteratorProblem.cs" />
+    <Compile Include="Enums2\Dog.cs" />
+    <Compile Include="Enums1\EnumProblem.cs" />
+    <Compile Include="Enums2\EnumProblem2.cs" />
+    <Compile Include="CustomIterator\Flights.cs" />
+    <Compile Include="OverloadOperator\Person.cs" />
+    <Compile Include="Enums2\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enums2\Rabbit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
