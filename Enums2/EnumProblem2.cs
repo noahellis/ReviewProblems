@@ -37,9 +37,27 @@ namespace ReviewProblems
         }
         public void PrintAnimals()
         {
+            
             foreach(Animal animal in AnimalList)
             {
-                Console.WriteLine(animal.name, animal.age, ) 
+                
+                if (animal is Dog)
+                {
+                    Console.WriteLine("Dog: {0}, {1}, {2}", animal.name, animal.age, ((Dog)animal).DogBreed.ToString());
+                }
+                else if (animal is Cat)
+                {
+                    Console.WriteLine("Cat: {0}, {1}, {2}", animal.name, animal.age, ((Cat)animal).CatBreed.ToString());
+                }
+                else if (animal is Bird)
+                {
+                    Console.WriteLine("Bird: {0}, {1}, {2}", animal.name, animal.age, ((Bird)animal).BirdBreed.ToString());
+                }
+                else if (animal is Rabbit)
+                {
+                    Console.WriteLine("Rabbit: {0}, {1}, {2}", animal.name, animal.age, ((Rabbit)animal).RabbitBreed.ToString());
+                }
+
             }
         }
         

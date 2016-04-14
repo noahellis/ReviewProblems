@@ -15,7 +15,7 @@ namespace ReviewProblems
         {
             name = Name;
             age = Age;
-            catBreed = CatBreed;
+            CatBreed = catBreed;
         }
     }
 }

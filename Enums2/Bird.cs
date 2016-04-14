@@ -15,7 +15,7 @@ namespace ReviewProblems
         {
             name = Name;
             age = Age;
-            birdBreed = BirdBreed;
+            BirdBreed = birdBreed;
         }
     }
 }
