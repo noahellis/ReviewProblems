@@ -6,23 +6,12 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class SportUtility : Vehicle
+    public class SportUtility : Vehicle
     {
-        string make;
-        string year;
-        string color;
-        double price
-        {
-            get;
-            set;
-        }
+
 
         public SportUtility(string Make,  string Year, double Price, string Color) : base(Make, Year, Price, Color)
         {
-            Make = make;
-            Year = year;
-            Price = price;
-            Color = color;
         }
 
         public SportUtility()
@@ -35,6 +24,10 @@ namespace ReviewProblems
 
         public void MakeCustomSportUtility()
         {
+            make = ChooseMake();
+            year = ChooseYear();
+            color = ChooseColor();
+            Price = SetSellingPrice();
         }
 
     }

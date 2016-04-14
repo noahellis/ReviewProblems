@@ -9,26 +9,25 @@ namespace ReviewProblems
 
     abstract public class Vehicle
     {
-        string make;
-        string model;
-        string year;
-        string color;
+        public string make;
+        public string year;
+        public string color;
         private double price;
         public double Price
         {
             get
             {
-                return Price;
+                return price;
             }
             set
             {
-                Price = value;
+                price = value;
             }
         }
                 
         public Vehicle(string Make, string Year, double Price, string Color)
         {
-            Make = make;
+            make = Make;
             Year = year;
             Price = price;
             Color = color;
@@ -40,7 +39,7 @@ namespace ReviewProblems
         public string ChooseColor()
         {
             Console.WriteLine("Enter the number for the color you would like:");
-            Console.WriteLine("1:Red\n2:Blue\n3:Green\n4:White5:\nBlack\n6:Pink");            
+            Console.WriteLine("1:Red\n2:Blue\n3:Green\n4:White\n5:Black\n6:Pink");            
             int choice = int.Parse(Console.ReadLine());
             switch (choice)
             {

@@ -6,18 +6,15 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class Car : Vehicle
-    {
-        string make;
-        string year;
-        string color;
-        double price { get; set; }
+    public class Car : Vehicle
+    {        
         public Car(string Make, string Year, double Price, string Color) : base(Make, Year, Price, Color)
         {
-            Make = make;
-            Year = year;
-            Price = price;
-            Color = color;
+
+        }
+        public Car()
+        {
+
         }
         public void MakeRandomCar()
         {
@@ -25,7 +22,11 @@ namespace ReviewProblems
         }
         public void MakeCustomCar()
         {
-            
+
+            make = ChooseMake();
+            year = ChooseYear();
+            color = ChooseColor();
+            Price = SetSellingPrice();            
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class Customer
+    public class Customer
     {
         string name;
         string idNumber;

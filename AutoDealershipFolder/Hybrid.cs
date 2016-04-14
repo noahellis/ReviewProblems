@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class Hybrid : Vehicle
+    public class Hybrid : Vehicle
     {
-        string make;
-        string year;
-        string color;
-        double price { get; set; }
+
         public Hybrid(string Make, string Year, double Price, string Color) : base(Make, Year, Price, Color)
         {
-            Make = make;
-            Year = year;
-            Price = price;
-            Color = color;
+
+        }
+        public Hybrid()
+        {
+
         }
         public void MakeRandomHybrid()
         {
@@ -25,6 +23,11 @@ namespace ReviewProblems
         }
         public void MakeCustomHybrid()
         {
+
+            make = ChooseMake();
+            year = ChooseYear();
+            color = ChooseColor();
+            Price = SetSellingPrice();
 
         }
     }
