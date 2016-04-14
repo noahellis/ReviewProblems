@@ -43,6 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoDealershipFolder\AutoDealership.cs" />
+    <Compile Include="AutoDealershipFolder\Car.cs" />
+    <Compile Include="AutoDealershipFolder\Customer.cs" />
+    <Compile Include="AutoDealershipFolder\Truck.cs" />
+    <Compile Include="AutoDealershipFolder\Vehicle.cs" />
+    <Compile Include="AutoDealershipFolder\Hybrid.cs" />
+    <Compile Include="AutoDealershipFolder\SportUtility.cs" />
     <Compile Include="Enums2\Animal.cs" />
     <Compile Include="Enums2\Bird.cs" />
     <Compile Include="Enums2\Cat.cs" />
@@ -59,6 +66,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
