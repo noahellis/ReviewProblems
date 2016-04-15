@@ -20,7 +20,7 @@ namespace ReviewProblems
         Hybrid newHybrid = new Hybrid();
         SportUtility newSportUtility = new SportUtility();
         Vehicle vehicleInfo;
-        UI ui;
+        
         public AutoDealership()
         {
             MakeGenericCustomerList();
@@ -117,7 +117,7 @@ namespace ReviewProblems
             }
             else if (choice.Equals("no", StringComparison.OrdinalIgnoreCase))
             {
-                ui.StartUI();
+                vehicleInfo.ui.StartUI();
                 return null;
             }
             else
@@ -158,7 +158,7 @@ namespace ReviewProblems
             else if (!populatedVehicleList)
             {
                 Console.WriteLine("Sorry, there aren't any vehicles in your list yet. Add some to your inventory!");
-                ui.StartUI();
+                vehicleInfo.ui.StartUI();
             }
          
         }
@@ -263,7 +263,7 @@ namespace ReviewProblems
             if (!populatedVehicleList)
             {
                 Console.WriteLine("There are no vehicles in your list. Buy some vehicles before you discount them");
-                ui.StartUI();
+                vehicleInfo.ui.StartUI();
             }
             else if (populatedVehicleList)
             {

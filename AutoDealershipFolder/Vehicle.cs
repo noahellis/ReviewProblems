@@ -9,6 +9,7 @@ namespace ReviewProblems
 
     public abstract class Vehicle
     {
+        public UI ui = new UI();
         public string make;
         public string year;
         public string color;
