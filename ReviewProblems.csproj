@@ -47,6 +47,7 @@
     <Compile Include="AutoDealershipFolder\Car.cs" />
     <Compile Include="AutoDealershipFolder\Customer.cs" />
     <Compile Include="AutoDealershipFolder\Truck.cs" />
+    <Compile Include="AutoDealershipFolder\UI.cs" />
     <Compile Include="AutoDealershipFolder\Vehicle.cs" />
     <Compile Include="AutoDealershipFolder\Hybrid.cs" />
     <Compile Include="AutoDealershipFolder\SportUtility.cs" />

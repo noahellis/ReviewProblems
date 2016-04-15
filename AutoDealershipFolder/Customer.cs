@@ -8,34 +8,50 @@ namespace ReviewProblems
 {
     public class Customer
     {
-        string name;
-        string idNumber;
+        public string name;
+        public string idNumber;
+        public bool buyVehicle;
         double discountAmount;
+        public double price;
         Vehicle possibleVehicle;
         public Customer (string Name, string IDNumber)
         {
-            Name = name;
-            IDNumber = idNumber;
+            name = Name;
+            idNumber = IDNumber;
         }
         public Customer()
         {
 
         }
-        public void TestDriveVehicle()
+        public bool TestDriveVehicle()
         {
-            //random number generator
-            //if vehicle passed dealership test, 10% chance of something going wrong
-            //if vehicle didn't pass test, 60% chance of something going wrong
+            Random testDriveRandom = new Random();
+            
+            if (testDriveRandom.Next(0, 10) < 9)
+            {
+                buyVehicle = true;
+                Console.WriteLine("Customer liked the vehicle, and will buy it");
+            }
+            else if (testDriveRandom.Next(0, 10) > 8)
+            {
+                buyVehicle = false;
+                Console.WriteLine("Customer did not like the vehicle, and will not buy it");
+                //return to menu
+            }
+            return buyVehicle;
+            
         }
         public void HaggleOverPrice()
-        {          
-              
+        {
+            Console.WriteLine("How much (in $) would the customer like to try to get off the price of the vehicle?");  
             Random haggleRandom = new Random();
             if (discountAmount <= (possibleVehicle.Price * .1))
             {
                 if (haggleRandom.Next(0, 11) < 8)
                 {
+                    price = possibleVehicle.Price;
                     possibleVehicle.Price -= discountAmount;
+                    Console.WriteLine("New Price: {0:C2}", possibleVehicle.Price);
 
                 }
                 else
@@ -48,7 +64,9 @@ namespace ReviewProblems
             {
                 if (haggleRandom.Next(0, 11) < 6)
                 {
+                    price = possibleVehicle.Price;
                     possibleVehicle.Price -= discountAmount;
+                    Console.WriteLine("New Price: {0:C2}", possibleVehicle.Price);
                 }
                 else
                 {
@@ -59,7 +77,9 @@ namespace ReviewProblems
             {
                 if(haggleRandom.Next(0,11) < 4)
                 {
+                    price = possibleVehicle.Price;
                     possibleVehicle.Price -= discountAmount;
+                    Console.WriteLine("New Price: {0:C2}", possibleVehicle.Price);
                 }
                 else
                 {
@@ -70,7 +90,9 @@ namespace ReviewProblems
             {
                 if (haggleRandom.Next(0, 11) < 1)
                 {
+                    price = possibleVehicle.Price;
                     possibleVehicle.Price -= discountAmount;
+                    Console.WriteLine("New Price: {0:C2}", possibleVehicle.Price);
                 }
                 else
                 {

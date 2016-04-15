@@ -20,8 +20,7 @@ namespace ReviewProblems
             //enumPromblem.PrintWeather();
             //EnumProblem2 enumtest2 = new EnumProblem2();
             //enumtest2.PrintAnimals();
-            AutoDealership testAuto = new AutoDealership();
-            testAuto.OrderVehicles();            
+       
             Console.ReadKey();
 
         }
