@@ -16,10 +16,7 @@ namespace ReviewProblems
 
         public SportUtility()
         {
-        }
 
-        public void MakeRandomSportUtility()
-        {
         }
 
         public void MakeCustomSportUtility()

@@ -17,10 +17,7 @@ namespace ReviewProblems
         {
 
         }
-        public void MakeRandomHybrid()
-        {
 
-        }
         public void MakeCustomHybrid()
         {
 

@@ -10,7 +10,7 @@ namespace ReviewProblems
     {
         string name;
         string idNumber;
-        int discountAmount;
+        double discountAmount;
         Vehicle possibleVehicle;
         public Customer (string Name, string IDNumber)
         {

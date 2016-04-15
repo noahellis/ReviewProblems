@@ -16,10 +16,7 @@ namespace ReviewProblems
         {
 
         }
-        public void MakeRandomCar()
-        {
 
-        }
         public void MakeCustomCar()
         {
 

@@ -23,43 +23,23 @@ namespace ReviewProblems
             switch (choice)
             {
                 case 1:
-                    newSportUtility.MakeCustomSportUtility();                    
-                    Console.WriteLine("How many of this vehicle would you like to make?");
-                    choice = int.Parse(Console.ReadLine());
-                    for(int addMulitpleIndex = 0; addMulitpleIndex < choice; addMulitpleIndex++)
-                    {
-                        vehicleList.Add(newSportUtility);
-                    }
+                    newSportUtility.MakeCustomSportUtility();
+                    MakeMultipleVehicle();
                     AskMakeNewVehicle();
                     break;
                 case 2:
                     newHybrid.MakeCustomHybrid();
-                    Console.WriteLine("How many of this vehicle would you like to make?");
-                    choice = int.Parse(Console.ReadLine());
-                    for (int addMulitpleIndex = 0; addMulitpleIndex < choice; addMulitpleIndex++)
-                    {
-                        vehicleList.Add(newHybrid);
-                    }                    
+                    MakeMultipleVehicle();
                     AskMakeNewVehicle();
                     break;
                 case 3:
                     newTruck.MakeCustomTruck();
-                    Console.WriteLine("How many of this vehicle would you like to make?");
-                    choice = int.Parse(Console.ReadLine());
-                    for (int addMulitpleIndex = 0; addMulitpleIndex < choice; addMulitpleIndex++)
-                    {
-                        vehicleList.Add(newTruck);
-                    }
+                    MakeMultipleVehicle();
                     AskMakeNewVehicle();
                     break;
                 case 4:
                     newCar.MakeCustomCar();
-                    Console.WriteLine("How many of this vehicle would you like to make?");
-                    choice = int.Parse(Console.ReadLine());
-                    for (int addMulitpleIndex = 0; addMulitpleIndex < choice; addMulitpleIndex++)
-                    {
-                        vehicleList.Add(newCar);
-                    }
+                    MakeMultipleVehicle();
                     AskMakeNewVehicle();
                     break;
                 default:
@@ -67,6 +47,16 @@ namespace ReviewProblems
                     return OrderVehicles();                
             }
             return choice;
+        }
+        public void MakeMultipleVehicle()
+        {
+            Console.WriteLine("How many of this vehicle would you like to make?");
+            int choice = int.Parse(Console.ReadLine());
+            for (int addMulitpleIndex = 0; addMulitpleIndex < choice; addMulitpleIndex++)
+            {
+                vehicleList.Add(newCar);
+                TestVehicle();
+            }
         }
         public int? AskMakeNewVehicle()
         {
@@ -92,9 +82,23 @@ namespace ReviewProblems
 
         }
 
-        public void TestVehicle()
+        public bool TestVehicle()
         {
-
+            int testNumber;
+            bool passTest;
+            Random vehicleTest = new Random();
+            Console.WriteLine("We will now test your vehicle. If it doesn't pass minimum testing requirements, it will be removed from your inventory");
+            if ((testNumber = vehicleTest.Next(0,100))<=5)
+            {
+                Console.WriteLine("This vehicle didn't pass minimum testing requirements. It will be removed from your inventory");
+                vehicleList.RemoveAt(vehicleList.Count);
+                passTest = false;
+            }
+            else
+            {
+                passTest = true;
+            }
+            return passTest;
         }
         public void AdjustVehiclePrice()
         {
@@ -102,20 +106,9 @@ namespace ReviewProblems
         }
         public void HaveSalesEvent()
         {
-            //debuff sales event?
+            //debuff sales event? 
         }
-        public void GenerateRandomVehicles()
-        {
-            Random vehicleGenerator = new Random();
-            int generatedVehicleNumber = int.Parse(Console.ReadLine());
-            for (int generatedIndex = 0; generatedIndex < generatedVehicleNumber; generatedIndex++)
-            {
-                if (vehicleGenerator.Next(0, 5) == 1)
-                {
-                    
-                }
-            }
-        }
+
 
     }
 }

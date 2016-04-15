@@ -17,10 +17,7 @@ namespace ReviewProblems
         {
 
         }
-        public void MakeRandomTruck()
-        {
 
-        }
         public void MakeCustomTruck()
         {
             make = ChooseMake();
