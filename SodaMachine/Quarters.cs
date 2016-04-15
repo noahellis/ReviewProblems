@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class Quarters
+    class Quarters : Coins
     {
-        public Quarters(double value, int startingQuarters)
+        public int startingQuarters;
+        public Quarters(double value, int StartingQuarters) : base(value, StartingQuarters)
         {
-            value = .25;
-            startingQuarters = 20;
+            startingQuarters = StartingQuarters;
+        }
+        public Quarters(double value) : base (value)
+        {
+
         }
     }
 }

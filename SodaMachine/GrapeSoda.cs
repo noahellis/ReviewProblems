@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class GrapeSoda
+    class GrapeSoda : Soda
     {
-        public GrapeSoda(double costPerCanGrape)
+        public GrapeSoda(double costPerCanGrape, int startingGrape)
         {
             costPerCanGrape = .6;
+            startingGrape = 30;
         }
     }
 }

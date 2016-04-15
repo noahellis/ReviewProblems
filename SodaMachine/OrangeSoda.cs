@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class OrangeSoda
+    class OrangeSoda : Soda
     {
-        public OrangeSoda(double costPerCanOrange)
+        public OrangeSoda(double costPerCanOrange, int startingOrange)
         {
             costPerCanOrange = .35;
+            startingOrange = 20;
         }
     }
 }

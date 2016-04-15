@@ -22,6 +22,8 @@ namespace ReviewProblems
             //enumtest2.PrintAnimals();
             //UI testUI = new UI();
             //testUI.StartUI();
+            SodaMachine testMachine = new SodaMachine();
+            testMachine.PutInChange();
             Console.ReadKey();
 
         }

@@ -51,6 +51,7 @@
     <Compile Include="AutoDealershipFolder\Vehicle.cs" />
     <Compile Include="AutoDealershipFolder\Hybrid.cs" />
     <Compile Include="AutoDealershipFolder\SportUtility.cs" />
+    <Compile Include="SodaMachine\Coins.cs" />
     <Compile Include="SodaMachine\Dimes.cs" />
     <Compile Include="Enums2\Animal.cs" />
     <Compile Include="Enums2\Bird.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Enums2\Rabbit.cs" />
     <Compile Include="SodaMachine\Quarters.cs" />
     <Compile Include="SodaMachine\SodaMachine.cs" />
+    <Compile Include="SodaMachine\Soda.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

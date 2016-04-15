@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class Dimes
+    class Dimes : Coins
     {
-        public Dimes(double value, int startingDimes)
+        public int startingDimes;
+        public Dimes(double value, int StartingDimes) : base (value, StartingDimes)
         {
-            value = .1;
-            startingDimes = 10;
+            startingDimes = StartingDimes;
+        }
+        public Dimes(double value) : base(value)
+        {
+
         }
     }
 }

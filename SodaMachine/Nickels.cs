@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class Nickels
+    class Nickels : Coins
     {
-        public Nickels(double value, int startingNickels)
+        public int startingNickels;
+        public Nickels(double value, int StartingNickels) : base (value, StartingNickels)
         {
-            value = .05;
-            startingNickels = 20;
+            startingNickels = StartingNickels;
+        }
+        public Nickels(double value) : base (value)
+        {
+
         }
     }
 }

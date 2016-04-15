@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    class MeatSoda
+    class MeatSoda : Soda
     {
-        public MeatSoda(double costPerCanMeat)
+        public MeatSoda(double costPerCanMeat, int startingMeat)
         {
             costPerCanMeat = .06;
+            startingMeat = 15;
         }
     }
 }
