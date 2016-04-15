@@ -89,6 +89,7 @@ namespace ReviewProblems
         public void AddStartingSodaStock()
         {
             sodaList.Add(new GrapeSoda(.6, 30));
+            for (int grapeSodaIndex = 0; grapeSodaIndex < AddStartingSodaStock.)
             sodaList.Add(new OrangeSoda(.35, 20));
             sodaList.Add(new MeatSoda(.06, 20));
         }

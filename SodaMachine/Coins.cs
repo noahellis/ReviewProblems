@@ -17,7 +17,7 @@ namespace ReviewProblems
         }
         public Coins(double CoinValue)
         {
-
+            coinValue = CoinValue;
         }
 
         public void AddToList()

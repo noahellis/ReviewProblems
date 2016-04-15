@@ -9,13 +9,15 @@ namespace ReviewProblems
     class Dimes : Coins
     {
         public int startingDimes;
-        public Dimes(double value, int StartingDimes) : base (value, StartingDimes)
+        public double value;
+        public Dimes(double Value, int StartingDimes) : base (Value, StartingDimes)
         {
             startingDimes = StartingDimes;
+            value = Value;
         }
-        public Dimes(double value) : base(value)
+        public Dimes(double Value) : base(Value)
         {
-
+            value = Value;
         }
     }
 }

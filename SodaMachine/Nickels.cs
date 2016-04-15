@@ -9,13 +9,15 @@ namespace ReviewProblems
     class Nickels : Coins
     {
         public int startingNickels;
-        public Nickels(double value, int StartingNickels) : base (value, StartingNickels)
+        public double value;
+        public Nickels(double Value, int StartingNickels) : base (Value, StartingNickels)
         {
             startingNickels = StartingNickels;
+            value = Value;
         }
-        public Nickels(double value) : base (value)
+        public Nickels(double Value) : base (Value)
         {
-
+            value = Value;
         }
     }
 }

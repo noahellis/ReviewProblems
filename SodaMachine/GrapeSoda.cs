@@ -8,6 +8,7 @@ namespace ReviewProblems
 {
     class GrapeSoda : Soda
     {
+        
         public GrapeSoda(double costPerCanGrape, int startingGrape)
         {
             costPerCanGrape = .6;

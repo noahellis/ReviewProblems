@@ -9,13 +9,15 @@ namespace ReviewProblems
     class Quarters : Coins
     {
         public int startingQuarters;
-        public Quarters(double value, int StartingQuarters) : base(value, StartingQuarters)
+        public double value;
+        public Quarters(double Value, int StartingQuarters) : base(Value, StartingQuarters)
         {
             startingQuarters = StartingQuarters;
+            value = Value;
         }
-        public Quarters(double value) : base (value)
+        public Quarters(double Value) : base (Value)
         {
-
+            value = Value;
         }
     }
 }
