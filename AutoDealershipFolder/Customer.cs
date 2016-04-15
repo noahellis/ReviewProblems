@@ -12,12 +12,36 @@ namespace ReviewProblems
         public string idNumber;
         public bool buyVehicle;
         double discountAmount;
-        public double price;
+        public string make;
+        public string year;
+        public string color;
+        private double price;
+        public double Price
+        {
+            get
+            {
+                return price;
+            }
+            set
+            {
+                price = value;
+            }
+        }
+
         Vehicle possibleVehicle;
         public Customer (string Name, string IDNumber)
         {
             name = Name;
             idNumber = IDNumber;
+        }
+        public Customer(string Name, string IDNumber, string Make, string Year, double Price, string Color)
+        {
+            name = Name;
+            idNumber = IDNumber;
+            make = Make;
+            year = Year;
+            price = Price;
+            color = Color;
         }
         public Customer()
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ReviewProblems
 {
 
-    abstract public class Vehicle
+    public abstract class Vehicle
     {
         public string make;
         public string year;
@@ -28,9 +28,9 @@ namespace ReviewProblems
         public Vehicle(string Make, string Year, double Price, string Color)
         {
             make = Make;
-            Year = year;
-            Price = price;
-            Color = color;
+            year = Year;
+            price = Price;
+            color = Color;
         }
         public Vehicle()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReviewProblems
 {
-    public abstract class AutoDealership
+    public class AutoDealership
     {
         private List<Customer> customerList = new List<Customer>();
         private List<Vehicle> vehicleList = new List<Vehicle>();
@@ -20,6 +20,7 @@ namespace ReviewProblems
         Hybrid newHybrid = new Hybrid();
         SportUtility newSportUtility = new SportUtility();
         Vehicle vehicleInfo;
+        UI ui;
         public AutoDealership()
         {
             MakeGenericCustomerList();
@@ -99,6 +100,7 @@ namespace ReviewProblems
         {
             Console.WriteLine("How many of this vehicle would you like to make?");
             int choice = int.Parse(Console.ReadLine());
+            Console.WriteLine("We will now test each vehicle. If it doesn't pass minimum testing requirements, you will be informed. If you receive no notification, it passed inspection");
             for (int addMulitpleIndex = 0; addMulitpleIndex < choice; addMulitpleIndex++)
             {
                 VehicleList.Add(newCar);
@@ -115,7 +117,7 @@ namespace ReviewProblems
             }
             else if (choice.Equals("no", StringComparison.OrdinalIgnoreCase))
             {
-                //main menu
+                ui.StartUI();
                 return null;
             }
             else
@@ -135,31 +137,52 @@ namespace ReviewProblems
             else if (populatedVehicleList)
             {
                 Console.Clear();
+                PrintVehicles();
+                PrintCustomers();
+                SellVehicle();
+            }
+        }
+        public void PrintVehicles()
+        {
+            DetermineListPopulated();
+            if (populatedVehicleList)
+            {
                 int carNumber = 1;
-                int customerNumber = 1;
                 Console.WriteLine("Available Vehicles:");
                 foreach (Vehicle vehicle in VehicleList)
                 {
                     Console.WriteLine("{0}: Make: {1} Type: {2} Year {3} Color: {4} Price: {5}", carNumber, vehicle.make, VehicleList.GetType(), vehicle.year, vehicle.color, vehicle.Price);
                     carNumber++;
                 }
-                Console.WriteLine("Customers looking to buy:");
-                foreach(Customer customer in CustomerList)
-                {
-                    Console.WriteLine("{0}: Name: {1} Customer Number: {2}", customerNumber, customer.name, customer.idNumber);
-                    customerNumber++;
-                }
-                SellVehicle();
+            }
+            else if (!populatedVehicleList)
+            {
+                Console.WriteLine("Sorry, there aren't any vehicles in your list yet. Add some to your inventory!");
+                ui.StartUI();
+            }
+         
+        }
+        public void PrintCustomers()
+        {
+            int customerNumber = 1;
+            Console.WriteLine("Customers looking to buy:");
+            foreach (Customer customer in CustomerList)
+            {
+                Console.WriteLine("{0}: Name: {1} Customer Number: {2}", customerNumber, customer.name, customer.idNumber);
+                customerNumber++;
             }
         }
         public void SellVehicle()
         {
             Console.WriteLine("Enter the number to the left of the vehicle that the customer would like to test drive");
             int choice = int.Parse(Console.ReadLine());
-            customerInfo.price = VehicleList[choice - 1].Price;
+            Console.WriteLine("Enter number to the left of the person that bought the vehicle");
+            int choice1 = int.Parse(Console.ReadLine());
+            customerInfo.Price = VehicleList[choice - 1].Price;
             customerInfo.TestDriveVehicle();
             AskToHaggle();
             dealershipBank += VehicleList[choice - 1].Price;
+            CustomerList.Add(new Customer(CustomerList[choice1 - 1].name, CustomerList[choice1 - 1].idNumber, VehicleList[choice - 1].make, VehicleList[choice - 1].year, VehicleList[choice - 1].Price, VehicleList[choice - 1].color));
             VehicleList.RemoveAt(choice - 1);
         }
         public void AskToHaggle()
@@ -186,7 +209,7 @@ namespace ReviewProblems
             int testNumber;
             bool passTest;
             Random vehicleTest = new Random();
-            Console.WriteLine("We will now test your vehicle. If it doesn't pass minimum testing requirements, it will be removed from your inventory");
+            
             if ((testNumber = vehicleTest.Next(0,100))<=5)
             {
                 Console.WriteLine("This vehicle didn't pass minimum testing requirements. It will be removed from your inventory");
@@ -240,7 +263,7 @@ namespace ReviewProblems
             if (!populatedVehicleList)
             {
                 Console.WriteLine("There are no vehicles in your list. Buy some vehicles before you discount them");
-                //restart interface
+                ui.StartUI();
             }
             else if (populatedVehicleList)
             {
