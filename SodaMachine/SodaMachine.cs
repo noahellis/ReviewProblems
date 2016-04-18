@@ -92,49 +92,77 @@ namespace ReviewProblems
             }
         }
 
-        public void PutInChange()
+        public int? PutInChange()
         {
+
             Console.WriteLine("Menu:\nGrape Soda ($.60)\nOrange Soda ($.35)\nMeat Soda ($.06)");
             Console.WriteLine("How many Quarters will you put in?");
-            try {
-                insertedQuarters = int.Parse(Console.ReadLine());
-                }
-            catch (Exception e)
-            {
-                Console.WriteLine("Please enter a positive whole number");
-            }
-            Console.WriteLine("How many Dimes will you put in?");
-            try
-            {
-                insertedDimes = int.Parse(Console.ReadLine());
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Please enter a positive whole number");
-            }
-            Console.WriteLine("How many Nickels will you put in?");
-            try
-            {
-                insertedNickels = int.Parse(Console.ReadLine());
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Please enter a positive whole number");
-            }
-            Console.WriteLine("How many Pennies will you put in?");
-            try
-            {
-                insertedPennies = int.Parse(Console.ReadLine());
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Please enter a positive whole number");
-            }
+            PutInQuarters();
+            PutInDimes();
+            PutInNickels();
+            PutInPennies();
             total = ((insertedPennies * .01m) + (insertedNickels * .05m) + (insertedDimes * .1m) + (insertedQuarters * .25m));
             Console.WriteLine("You have inserted {0:C2}", total);
             AddInsertedCoinsToList();
             SelectSoda();
+            return null;
         }
+        public int? PutInQuarters()
+        {
+            try
+            {
+                insertedQuarters = int.Parse(Console.ReadLine());
+                return null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Please enter a positive whole number");
+                return PutInChange();
+            }
+        }
+        
+        public int? PutInDimes()
+        {
+            Console.WriteLine("How many Dimes will you put in?");
+            try
+            {
+                insertedDimes = int.Parse(Console.ReadLine());
+                return null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Please enter a positive whole number");
+                return PutInDimes();
+            }
+        }
+        public int? PutInNickels()
+        {
+            Console.WriteLine("How many Nickels will you put in?");
+            try
+            {
+                insertedNickels = int.Parse(Console.ReadLine());
+                return null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Please enter a positive whole number");
+                return PutInNickels();
+            }
+        }
+        public int? PutInPennies()
+        {
+            Console.WriteLine("How many Pennies will you put in?");
+            try
+            {
+                insertedPennies = int.Parse(Console.ReadLine());
+                return null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Please enter a positive whole number");
+                return PutInPennies();
+            }
+        }        
 
         public int? SelectSoda()
         {
@@ -147,6 +175,7 @@ namespace ReviewProblems
             catch (Exception e)
             {
                 Console.WriteLine("Please enter a positive whole number");
+                return SelectSoda();
             }
             switch (choice)
             {
@@ -170,10 +199,12 @@ namespace ReviewProblems
             try
             {
                 choice = int.Parse(Console.ReadLine());
+                
             }
             catch (Exception e)
             {
                 Console.WriteLine("Please enter a positive whole number");
+                return AskToBuyAnother();
             }
             switch (choice)
             {
