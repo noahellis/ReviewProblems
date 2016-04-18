@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace ReviewProblems
 {
@@ -117,6 +118,8 @@ namespace ReviewProblems
             catch (Exception e)
             {
                 Console.WriteLine("Please enter a positive whole number");
+                Thread.Sleep(1000);
+                Console.Clear();
                 return PutInChange();
             }
         }
@@ -132,6 +135,8 @@ namespace ReviewProblems
             catch (Exception e)
             {
                 Console.WriteLine("Please enter a positive whole number");
+                Thread.Sleep(1000);
+                Console.Clear();
                 return PutInDimes();
             }
         }
@@ -146,6 +151,8 @@ namespace ReviewProblems
             catch (Exception e)
             {
                 Console.WriteLine("Please enter a positive whole number");
+                Thread.Sleep(1000);
+                Console.Clear();
                 return PutInNickels();
             }
         }
@@ -160,6 +167,8 @@ namespace ReviewProblems
             catch (Exception e)
             {
                 Console.WriteLine("Please enter a positive whole number");
+                Thread.Sleep(1000);
+                Console.Clear();
                 return PutInPennies();
             }
         }        
@@ -167,7 +176,7 @@ namespace ReviewProblems
         public int? SelectSoda()
         {
             Console.WriteLine("Select which soda you would like");
-            Console.WriteLine("1:Grape($.60)\n2:Orange($..35)\n3:Meat($.06)");
+            Console.WriteLine("1:Grape($.60)\n2:Orange($.35)\n3:Meat($.06)");
             try
             {
                 choice = int.Parse(Console.ReadLine());
@@ -175,6 +184,8 @@ namespace ReviewProblems
             catch (Exception e)
             {
                 Console.WriteLine("Please enter a positive whole number");
+                Thread.Sleep(1000);
+                Console.Clear();
                 return SelectSoda();
             }
             switch (choice)
@@ -204,6 +215,8 @@ namespace ReviewProblems
             catch (Exception e)
             {
                 Console.WriteLine("Please enter a positive whole number");
+                Thread.Sleep(1000);
+                Console.Clear();
                 return AskToBuyAnother();
             }
             switch (choice)
@@ -513,28 +526,28 @@ namespace ReviewProblems
             {
                 if (changeAmount >= .25m && quarterList.Count > 0)
                 {
-                    Console.WriteLine("Quarter Dispensed");
+                    Console.WriteLine("Quarter Dispensed\n");
                     changeAmount -= .25m;
                     quarterList.RemoveAt(0);
                     GiveChange();
                 }
                 else if (changeAmount >= .1m && dimeList.Count > 0)
                 {
-                    Console.Write("Dime Dispensed");
+                    Console.Write("Dime Dispensed\n");
                     changeAmount -= .1m;
                     dimeList.RemoveAt(0);
                     GiveChange();
                 }
                 else if (changeAmount >= .05m && nickelList.Count > 0)
                 {
-                    Console.WriteLine("Nickel Dispensed");
+                    Console.WriteLine("Nickel Dispensed\n");
                     changeAmount -= .05m;
                     nickelList.RemoveAt(0);
                     GiveChange();
                 }
                 else if (changeAmount >= .01m && pennyList.Count > 0)
                 {
-                    Console.WriteLine("Penny Dispensed");
+                    Console.WriteLine("Penny Dispensed\n");
                     changeAmount -= .01m;
                     pennyList.RemoveAt(0);
                     GiveChange();
