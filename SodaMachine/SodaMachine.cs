@@ -19,8 +19,9 @@ namespace ReviewProblems
         int insertedDimes;
         int insertedNickels;
         int insertedPennies;
-        double changeAmount;
-        double total;
+        int choice;
+        decimal changeAmount;
+        decimal total;
         bool enoughChange;
         public List<Coins> inputtedCoins = new List<Coins>();
         private List<Coins> coinList = new List<Coins>();
@@ -93,15 +94,43 @@ namespace ReviewProblems
 
         public void PutInChange()
         {
+            Console.WriteLine("Menu:\nGrape Soda ($.60)\nOrange Soda ($.35)\nMeat Soda ($.06)");
             Console.WriteLine("How many Quarters will you put in?");
-            insertedQuarters = int.Parse(Console.ReadLine());
+            try {
+                insertedQuarters = int.Parse(Console.ReadLine());
+                }
+            catch (Exception e)
+            {
+                Console.WriteLine("Please enter a positive whole number");
+            }
             Console.WriteLine("How many Dimes will you put in?");
-            insertedDimes = int.Parse(Console.ReadLine());
+            try
+            {
+                insertedDimes = int.Parse(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Please enter a positive whole number");
+            }
             Console.WriteLine("How many Nickels will you put in?");
-            insertedNickels = int.Parse(Console.ReadLine());
+            try
+            {
+                insertedNickels = int.Parse(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Please enter a positive whole number");
+            }
             Console.WriteLine("How many Pennies will you put in?");
-            insertedPennies = int.Parse(Console.ReadLine());
-            total = ((insertedPennies * .01) + (insertedNickels * .05) + (insertedDimes * .1) + (insertedQuarters * .25));
+            try
+            {
+                insertedPennies = int.Parse(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Please enter a positive whole number");
+            }
+            total = ((insertedPennies * .01m) + (insertedNickels * .05m) + (insertedDimes * .1m) + (insertedQuarters * .25m));
             Console.WriteLine("You have inserted {0:C2}", total);
             AddInsertedCoinsToList();
             SelectSoda();
@@ -111,7 +140,14 @@ namespace ReviewProblems
         {
             Console.WriteLine("Select which soda you would like");
             Console.WriteLine("1:Grape($.60)\n2:Orange($..35)\n3:Meat($.06)");
-            int choice = int.Parse(Console.ReadLine());
+            try
+            {
+                choice = int.Parse(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Please enter a positive whole number");
+            }
             switch (choice)
             {
                 case 1:
@@ -130,8 +166,15 @@ namespace ReviewProblems
         }
         public int? AskToBuyAnother()
         {
-            Console.WriteLine("Would you like to buy another soda?\nEnter 1 for yes, 2 for no");
-            int choice = int.Parse(Console.ReadLine());
+            Console.WriteLine("\nWould you like to buy another soda?\nEnter 1 for yes, 2 for no");
+            try
+            {
+                choice = int.Parse(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Please enter a positive whole number");
+            }
             switch (choice)
             {
                 case 1:
@@ -150,7 +193,7 @@ namespace ReviewProblems
         {
             if (grapeSodaList.Count > 0)
             {
-                if (total < .60)
+                if (total < .60m)
                 {
                     Console.WriteLine("Sorry you did not put enough money in to buy Grape Soda");
                     Console.WriteLine("Your coins are returned");
@@ -158,7 +201,7 @@ namespace ReviewProblems
                     AskToBuyAnother();
 
                 }
-                else if (total == .60)
+                else if (total == .60m)
                 {
                     Console.WriteLine("Grape Soda Dispensed!");
                     grapeSodaList.RemoveAt(0);
@@ -183,8 +226,10 @@ namespace ReviewProblems
                     }
                     AskToBuyAnother();
                 }
-                else if (total > .60)
+                else if (total > .60m)
                 {
+                    changeAmount = total - .6m;
+                    CheckForAdequateChange();
                     if (enoughChange)
                     {
                         Console.WriteLine("Grape Soda Dispensed!");
@@ -207,10 +252,9 @@ namespace ReviewProblems
                             {
                                 pennyList.Add(new Pennies(.01));
                             }
-                        }
-
-                        changeAmount = total - .6;
+                        }                        
                         GiveChange();
+                        AskToBuyAnother();
                     }
                     else if (!enoughChange)
                     {
@@ -234,14 +278,14 @@ namespace ReviewProblems
         {
             if (orangeSodaList.Count > 0)
             {
-                if (total < .35)
+                if (total < .35m)
                 {
                     Console.WriteLine("Sorry you did not put enough money in to buy Orange Soda");
                     Console.WriteLine("Your coins are returned");
                     inputtedCoins.Clear();
                     AskToBuyAnother();
                 }
-                else if (total == .35)
+                else if (total == .35m)
                 {
                     Console.WriteLine("Orange Soda Dispensed!");
                     orangeSodaList.RemoveAt(0);
@@ -266,8 +310,10 @@ namespace ReviewProblems
                     }
                     AskToBuyAnother();
                 }
-                else if (total > .35)
+                else if (total > .35m)
                 {
+                    changeAmount = total - .35m;
+                    CheckForAdequateChange();
                     if (enoughChange)
                     {
                         Console.WriteLine("Orange Soda Dispensed!");
@@ -290,9 +336,7 @@ namespace ReviewProblems
                             {
                                 pennyList.Add(new Pennies(.01));
                             }
-                        }
-
-                        changeAmount = total - .35;
+                        }                        
                         GiveChange();
                         AskToBuyAnother();
                     }
@@ -318,14 +362,14 @@ namespace ReviewProblems
         {
             if (meatSodaList.Count > 0)
             {
-                if (total < .06)
+                if (total < .06m)
                 {
                     Console.WriteLine("Sorry you did not put enough money in to buy Meat Soda");
                     Console.WriteLine("Your coins are returned");
                     inputtedCoins.Clear();
                     AskToBuyAnother();
                 }
-                else if (total == .06)
+                else if (total == .06m)
                 {
                     Console.WriteLine("Meat Soda Dispensed!");
                     meatSodaList.RemoveAt(0);
@@ -350,8 +394,10 @@ namespace ReviewProblems
                     }
                     AskToBuyAnother();
                 }
-                else if (total > .06)
+                else if (total > .06m)
                 {
+                    changeAmount = total - .06m;
+                    CheckForAdequateChange();
                     if (enoughChange)
                     {
                         Console.WriteLine("Meat Soda Dispensed!");
@@ -374,9 +420,7 @@ namespace ReviewProblems
                             {
                                 pennyList.Add(new Pennies(.01));
                             }
-                        }
-
-                        changeAmount = total - .06;
+                        }                        
                         GiveChange();
                         AskToBuyAnother();
                     }
@@ -400,22 +444,27 @@ namespace ReviewProblems
 
         public bool CheckForAdequateChange()
         {
-            if (changeAmount > .25 && quarterList.Count <= 0)
+            if (changeAmount >50 && quarterList.Count < 2)
             {
                 enoughChange = false;
                 return enoughChange;
             }
-            else if (changeAmount > .9 && dimeList.Count <= 0)
+            else if (changeAmount > .25m && quarterList.Count <= 0)
             {
                 enoughChange = false;
                 return enoughChange;
             }
-            else if (changeAmount > .04 && nickelList.Count <= 0)
+            else if (changeAmount > .9m && dimeList.Count <= 0)
             {
                 enoughChange = false;
                 return enoughChange;
             }
-            else if (changeAmount >= .01 && pennyList.Count <= 0)
+            else if (changeAmount > .04m && nickelList.Count <= 0)
+            {
+                enoughChange = false;
+                return enoughChange;
+            }
+            else if (changeAmount >= .01m && pennyList.Count <= 0)
             {
                 enoughChange = false;
                 return enoughChange;
@@ -431,31 +480,31 @@ namespace ReviewProblems
         {
             while (changeAmount > 0)
             {
-                if (changeAmount >= .25 && quarterList.Count > 0)
+                if (changeAmount >= .25m && quarterList.Count > 0)
                 {
                     Console.WriteLine("Quarter Dispensed");
-                    changeAmount -= .25;
+                    changeAmount -= .25m;
                     quarterList.RemoveAt(0);
                     GiveChange();
                 }
-                else if (changeAmount >= .1 && dimeList.Count > 0)
+                else if (changeAmount >= .1m && dimeList.Count > 0)
                 {
                     Console.Write("Dime Dispensed");
-                    changeAmount -= .1;
+                    changeAmount -= .1m;
                     dimeList.RemoveAt(0);
                     GiveChange();
                 }
-                else if (changeAmount >= .05 && nickelList.Count > 0)
+                else if (changeAmount >= .05m && nickelList.Count > 0)
                 {
                     Console.WriteLine("Nickel Dispensed");
-                    changeAmount -= .05;
+                    changeAmount -= .05m;
                     nickelList.RemoveAt(0);
                     GiveChange();
                 }
-                else if (changeAmount >= .01 && pennyList.Count > 0)
+                else if (changeAmount >= .01m && pennyList.Count > 0)
                 {
                     Console.WriteLine("Penny Dispensed");
-                    changeAmount -= .01;
+                    changeAmount -= .01m;
                     pennyList.RemoveAt(0);
                     GiveChange();
                 }
