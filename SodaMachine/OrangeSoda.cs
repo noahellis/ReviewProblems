@@ -8,10 +8,9 @@ namespace ReviewProblems
 {
     class OrangeSoda : Soda
     {
-        public OrangeSoda(double costPerCanOrange, int startingOrange)
+        public OrangeSoda()
         {
-            costPerCanOrange = .35;
-            startingOrange = 20;
+            
         }
     }
 }

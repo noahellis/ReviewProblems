@@ -10,12 +10,6 @@ namespace ReviewProblems
     {
         public int startingPennies;
         public double value;
-        public Pennies(double Value, int StartingPennies) : base (Value, StartingPennies)
-        {
-
-            startingPennies = StartingPennies;
-            value = Value;
-        }
         public Pennies(double Value) : base(Value)
         {
             value = Value;

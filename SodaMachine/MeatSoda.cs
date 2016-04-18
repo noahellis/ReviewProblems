@@ -8,10 +8,9 @@ namespace ReviewProblems
 {
     class MeatSoda : Soda
     {
-        public MeatSoda(double costPerCanMeat, int startingMeat)
+        public MeatSoda()
         {
-            costPerCanMeat = .06;
-            startingMeat = 15;
+            
         }
     }
 }

@@ -8,6 +8,6 @@ namespace ReviewProblems
 {
     class Soda
     {
-        //mimic coin setup to add sodas to list
+       
     }
 }

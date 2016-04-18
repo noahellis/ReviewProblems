@@ -9,10 +9,9 @@ namespace ReviewProblems
     class GrapeSoda : Soda
     {
         
-        public GrapeSoda(double costPerCanGrape, int startingGrape)
+        public GrapeSoda()
         {
-            costPerCanGrape = .6;
-            startingGrape = 30;
+           
         }
     }
 }
